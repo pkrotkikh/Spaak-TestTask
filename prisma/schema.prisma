@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id                 Int      @id @default(autoincrement()) // сделаем id автоинкрементом
+  typeid             Int?
+  kategoriid         Int?
+  statusid           Int?
+  title              String?
+  content            String?
+  stage              String?
+  titel              String?
+  titelkort          String?
+  offentlighedskode  String?
+  nummer             String?
+  nummerprefix       String?
+  nummernumerisk     String?
+  nummerpostfix      String?
+  resume             String?
+  afstemningskonklusion String?
+  periodeid          Int?
+  afgorelsesresultatkode String?
+  baggrundsmateriale String?
+  opdateringsdato    DateTime? @db.Date
+  statsbudgetsag     Boolean?
+  begrundelse        String?
+  paragrafnummer     String?
+  paragraf           String?
+  afgorelsesdato     DateTime? @db.Date // если хотите хранить дату
+  afgorelse          String?
+  radsmodedato       DateTime? @db.Date // если хотите хранить дату
+  lovnummer          String?
+  lovnummerdato      DateTime? @db.Date // если хотите хранить дату
+  retsinformationsurl String?
+  fremsatundersagid  String?
+  deltundersagid     String?
+}
